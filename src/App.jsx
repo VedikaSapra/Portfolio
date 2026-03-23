@@ -3,16 +3,20 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { loadFull } from "tsparticles";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
+
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import AllCertificates from './pages/AllCertificates';
 import AllSkills from './pages/AllSkills';
 import TopNavbar from './components/TopNavbar';
+import SplashScreen from './components/SplashScreen';
 
 function App() {
   const [init, setInit] = useState(false);
+  const [loading, setLoading] = useState(true);
   const location = useLocation();
 
+  // Initialize particles
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadFull(engine);
@@ -23,7 +27,8 @@ function App() {
 
   return (
     <div className="App">
-      <TopNavbar />
+
+      {/* Particles always in background */}
       {init && (
         <Particles
           id="tsparticles"
@@ -68,14 +73,32 @@ function App() {
         />
       )}
 
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/certificates" element={<AllCertificates />} />
-          <Route path="/skills" element={<AllSkills />} />
-        </Routes>
-      </AnimatePresence>
+      {/* Splash Screen */}
+      {loading && (
+        <SplashScreen
+          onDone={() => {
+            // small delay for smoother transition
+            setTimeout(() => setLoading(false), 300);
+          }}
+        />
+      )}
+
+      {/* Main App */}
+      {!loading && (
+        <>
+          <TopNavbar />
+
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/certificates" element={<AllCertificates />} />
+              <Route path="/skills" element={<AllSkills />} />
+            </Routes>
+          </AnimatePresence>
+        </>
+      )}
+
     </div>
   );
 }
