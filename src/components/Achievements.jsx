@@ -13,17 +13,19 @@ import certOOP from '../assets/certifications/object oriented programming.png';
 import certWeb from '../assets/certifications/responsive web design.png';
 import certSoftEng from '../assets/certifications/software eng.png';
 import certSummer from '../assets/certifications/summertrainingcertificate.png';
+import certMongo from '../assets/certifications/mongoDB badges.png';
 
 const certificates = [
   { id: 0, title: 'Graph Camp', issuer: 'Algo University', year: '8 March 2026', image: certGraph, color: '#222222', link: '#' },
   { id: 1, title: 'Computational Theory:Language Priinciple & Finite Automata Theory', issuer: 'Infosys Springboard', year: '23 August 2025', image: certTheory, color: '#111111', link: '#' },
   { id: 2, title: 'Master Generative AI & Generative Ai tools(ChatGPT & more)', issuer: 'Infosys Springboard', year: '30 August 2025', image: certGenAI, color: '#333333', link: '#' },
   { id: 3, title: 'Frontend with React.js', issuer: 'Gokboru Tech Pvt Ltd', year: '18 July 2025', image: certSummer, color: '#888888', link: '#' },
-  { id: 4, title: 'Cloud Computing', issuer: 'NPTEL', year: 'May 2025', image: certNptel, color: '#444444', link: '#' },
-  { id: 5, title: 'Object Oriented Programming', issuer: 'neocolab', year: '5 December 2024', image: certOOP, color: '#555555', link: '#' },
-  { id: 6, title: 'Computer Programming', issuer: 'neocolab', year: '16 May 2024', image: certC, color: '#000000', link: '#' },
-  { id: 7, title: 'Software Engineering: Implementataion and Testing', issuer: 'Coursera', year: '11 May 2024', image: certSoftEng, color: '#777777', link: '#' },
-  { id: 8, title: 'Responsive Web Design', issuer: 'freecodecamp', year: '17 November 2023', image: certWeb, color: '#666666', link: '#' },
+  { id: 4, title: 'MongoDB Badges', issuer: 'MongoDB', year: '30 June 2025', image: certMongo, color: '#444444', link: '#' },
+  { id: 5, title: 'Cloud Computing', issuer: 'NPTEL', year: 'May 2025', image: certNptel, color: '#444444', link: '#' },
+  { id: 6, title: 'Object Oriented Programming', issuer: 'neocolab', year: '5 December 2024', image: certOOP, color: '#555555', link: '#' },
+  { id: 7, title: 'Computer Programming', issuer: 'neocolab', year: '16 May 2024', image: certC, color: '#000000', link: '#' },
+  { id: 8, title: 'Software Engineering: Implementataion and Testing', issuer: 'Coursera', year: '11 May 2024', image: certSoftEng, color: '#777777', link: '#' },
+  { id: 9, title: 'Responsive Web Design', issuer: 'freecodecamp', year: '17 November 2023', image: certWeb, color: '#666666', link: '#' },
 ];
 
 const Achievements = () => {
